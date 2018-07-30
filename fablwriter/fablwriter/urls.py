@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from masal import views
 
 urlpatterns = [
+    path('', views.home, name='home'),
     path('admin/', admin.site.urls),
+    path('fabl/create', views.fabl_create, name='create'),
+    path('fabl/publish/<int:id>/', views.fabl_publish, name='publish'),
 ]

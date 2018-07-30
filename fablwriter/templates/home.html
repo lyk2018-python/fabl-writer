@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <a href="{% url 'create' %}">CREATE</a><br/><br/>
+    <h2>HİKAYELER</h2>
+    {% for fable in fables %}
+      <a href="{% url 'publish' fable.id %}">{{ fable.baslik }}</a><br/>
+    {% endfor %}
+  </body>
+</html>

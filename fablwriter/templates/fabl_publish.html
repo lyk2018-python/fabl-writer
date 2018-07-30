@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <a href="{% url 'home' %}">HOME</a><br/><br/>
+    {% for i in 'BGSDC' %}
+      {% for sahne in sahnes %}
+        {% if sahne.anahtar == i %}
+          <p>{{ sahne.deger }}</p>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </body>
+</html>
