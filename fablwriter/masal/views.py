@@ -16,7 +16,9 @@ def fabl_create(request):
     if request.method == 'POST':
         form = FablForm(request.POST)
         if form.is_valid():
-            baslik = Fabl.objects.create(baslik=form.cleaned_data['baslik'])
+            baslik = Fabl.objects.create(baslik=form.cleaned_data['baslik'],
+                user=request.user,
+            )
             Sahne.objects.create(
                 anahtar='B',
                 deger=form.cleaned_data['baslik'],
@@ -53,10 +55,10 @@ def fabl_create(request):
         'form': form,
     })
 
-def fabl_publish(request, id):
-    id = Fabl.objects.get(id=id)
-    sahnes = Sahne.objects.filter(fabl_id=id)
+def fabl_publish(request, fabl):
+    fabl = Fabl.objects.get(id=fabl)
+    sahnes = Sahne.objects.filter(fabl_id=fabl)
     return render(request, 'fabl_publish.html', {
-        'title': id.baslik,
+        'fabl': fabl,
         'sahnes': sahnes,
     })
