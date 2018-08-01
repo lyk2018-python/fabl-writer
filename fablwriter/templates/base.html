@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}Default Title{% endblock %}</title>
+  </head>
+  <body>
+    <a href="{% url 'create' %}">CREATE</a><br/><br/>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>
