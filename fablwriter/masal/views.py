@@ -7,7 +7,7 @@ from masal.models import Baglam, Fabl, Sahne
 def home(request):
     fables = Fabl.objects.all()
     return render(request, 'home.html', {
-        'title': 'FABLOPİCASSO',
+        'title': 'FABLOPICASSO',
         'fables': fables,
     })
 
@@ -62,15 +62,3 @@ def fabl_publish(request, id):
         'fabl': id,
         'sahnes': sahnes,
     })
-
-def about(request):
-        return render(request, 'about.html')
-
-def login(request):
-        return render(request, 'login.html')
-
-def profile(request):
-        return render(request, 'profile.html')
-
-def signup(request):
-        return render(request, 'signup.html')
