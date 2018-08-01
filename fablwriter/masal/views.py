@@ -55,11 +55,11 @@ def fabl_create(request):
         'form': form,
     })
 
-def fabl_publish(request, fabl):
-    fabl = Fabl.objects.get(id=fabl)
-    sahnes = Sahne.objects.filter(fabl_id=fabl)
+def fabl_publish(request, id):
+    id = Fabl.objects.get(id=id)
+    sahnes = Sahne.objects.filter(fabl_id=id)
     return render(request, 'fabl_publish.html', {
-        'fabl': fabl,
+        'fabl': id,
         'sahnes': sahnes,
     })
 
