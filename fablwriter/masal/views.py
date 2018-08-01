@@ -62,3 +62,15 @@ def fabl_publish(request, fabl):
         'fabl': fabl,
         'sahnes': sahnes,
     })
+
+def about(request):
+        return render(request, 'about.html')
+
+def login(request):
+        return render(request, 'login.html')
+
+def profile(request):
+        return render(request, 'profile.html')
+
+def signup(request):
+        return render(request, 'signup.html')
