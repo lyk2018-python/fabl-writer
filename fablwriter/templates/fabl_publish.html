@@ -1,7 +1,7 @@
 {% extends "base.html" %}
+
 {% block title %}{{ fabl.baslik }}{% endblock %}
 {% block content %}
-    <a href="{% url 'home' %}">HOME</a><br/><br/>
     {% for i in 'BGSDC' %}
       {% for sahne in sahnes %}
         {% if sahne.anahtar == i %}
