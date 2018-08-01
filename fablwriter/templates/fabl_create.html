@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+{% extends "base.html" %}
+{% block title %}Create{% endblock %}
+{% block content %}
     {% if form %}
       <h2>Fabl Create</h2>
       <form method="post">
@@ -13,5 +9,4 @@
         <button type="submit" onclick="this.form.submit(); this.disabled=true;">Create</button>
       </form>
     {% endif %}
-  </body>
-</html>
+{% endblock %}
