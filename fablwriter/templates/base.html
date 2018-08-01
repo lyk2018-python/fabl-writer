@@ -5,9 +5,9 @@
     <title>{% block title %} Default Title {% endblock %}</title>
   </head>
   <body>
-    <a href="{% url 'create' %}">CREATE</a><br/><br/>
     {% block content %}
       #Contents goes in
     {% endblock %}
+    <a href="{% url 'create' %}">CREATE</a><br/><br/>
   </body>
 </html>
