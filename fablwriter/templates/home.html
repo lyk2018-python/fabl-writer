@@ -3,6 +3,6 @@
 {% block content %}
     <h2>HİKAYELER</h2>
     {% for fable in fables %}
-      <a href="{% url 'publish' fable.id %}">{{ fable.baslik }}</a><br/>
+      <a href="{% url 'publish' fable.id %}">{{ fable.title }}</a><br/>
     {% endfor %}
 {% endblock %}

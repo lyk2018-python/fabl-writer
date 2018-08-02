@@ -44,3 +44,13 @@ class Sahne(models.Model):
 
     def __str__(self):
         return self.fabl_id.baslik+" --> "+self.anahtar
+
+class Published(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField(max_length=1000)
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        null=True,
+        on_delete=models.CASCADE,
+    )
+    create_date = models.DateTimeField(auto_now_add=True)
