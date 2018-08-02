@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+{% load static %}
 {% load i18n %}
   <head>
     <meta charset="utf-8">
@@ -8,10 +9,12 @@
   </head>
   <body>
     <nav>
+
+      <img src="{% static "images/logo.png" %}" height="50" width="100" style="float:left"/>
       {% if user.is_authenticated %}
-        <a href="{% url 'profile' %}" style="float:left">Hello {{ user.username }}</a><br>
+        <a href="{% url 'profile' %}" style="float:left margin:10px">Hello {{ user.username }} !</a>
       {% endif %}
-      <div class="menu">
+        <div class="menu">
         <a href="{% url 'home' %}">{% trans 'Home' %}</a>
         <a href="{% url 'about' %}">{% trans 'About' %}</a>
         {% if user.is_authenticated %}
@@ -21,7 +24,7 @@
           <a href="{% url 'signup'%}">{% trans 'Signup' %}</a>
           <a href="{% url 'login'%}">{% trans 'Login' %}</a>
         {% endif %}
-      </div>
+        </div>
     </nav>
     {% block content %}
       #Contents goes in
