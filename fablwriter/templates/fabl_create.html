@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 {% block title %}Create{% endblock %}
 {% block content %}
-    {% if form %}
-      <h2>Fabl Create</h2>
-      <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" onclick="this.form.submit(); this.disabled=true;">Create</button>
-      </form>
-    {% endif %}
+    <h2>Fabl Create</h2>
+    <form method="POST">
+      {% csrf_token %}
+      {{ sahne_form.as_p }}
+      {{ baglam_formset.management_form }}
+      {% for form in baglam_formset %}
+        {{ form.as_table }}<br/>
+      {% endfor %}
+      <button type="submit" onclick="this.form.submit(); this.disabled=true;">Create</button>
+    </form>
 {% endblock %}

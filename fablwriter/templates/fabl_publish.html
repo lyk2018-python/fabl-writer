@@ -1,15 +1,9 @@
 {% extends "base.html" %}
 
-{% block title %}{{ fabl.baslik }}{% endblock %}
+{% block title %}{{ fabl.title }}{% endblock %}
 {% block content %}
-    {% for i in 'BGSDC' %}
-      {% for sahne in sahnes %}
-        {% if sahne.anahtar == i %}
-          <p>{{ sahne.deger }}</p>
-        {% endif %}
-      {% endfor %}
-    {% endfor %}
-    User: {{ fabl.user }}<br/>
-    Update : {{ fabl.update_date.date }}<br/>
-    Create : {{ fabl.create_date.date }}
+  {{ fabl.title }}<br/>
+  {{ fabl.content }}<br/>
+  User: {{ fabl.user }}<br/>
+  Create : {{ fabl.create_date.date }}
 {% endblock %}
