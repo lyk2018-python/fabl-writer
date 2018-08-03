@@ -1,7 +1,9 @@
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.contrib.auth.views import login
+from masal.models import Published
 
 
 def signup(request):
@@ -26,4 +28,8 @@ def about(request):
     return render(request, 'about.html')
 
 def profile(request):
-    return render(request, 'profile.html')
+    user = request.user
+    fables = Published.objects.filter(user_id=user.id)
+    return render(request, 'profile.html', {
+        'fables': fables
+    })
