@@ -6,7 +6,9 @@
   <head>
     <meta charset="utf-8">
     <title>{% block title %} Default Title {% endblock %}</title>
-    {% block script %}{% endblock %}
+    {% block headblock %}{% endblock %}
+    <script>{% block script %}{% endblock %}</script>
+    <style>{% block style %}{% endblock %}</style>
   </head>
   <body>
 

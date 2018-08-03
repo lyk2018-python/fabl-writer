@@ -1,14 +1,30 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block headblock %}
+  <link rel="stylesheet" href="{% static 'layout/styles/create.css' %}" type="text/css" />
+
+
+{% endblock %}
+
 {% block title %}Create{% endblock %}
+
 {% block content %}
     <h2>Fabl Create</h2>
+    <div class="content">
     <form method="POST">
       {% csrf_token %}
+      <div class="sahneler">
       {{ sahne_form.as_p }}
+     </div>
+      <div class="baglam">
       {{ baglam_formset.management_form }}
       {% for form in baglam_formset %}
         {{ form.as_table }}<br/>
-      {% endfor %}
+        {% endfor %}
+      </div><!--baglam-->
+      </div><!--content-->
+
       <button type="submit" onclick="this.form.submit(); this.disabled=true;">Create</button>
     </form>
 {% endblock %}
