@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% block title %}FABLOPICASSO{% endblock %}
 {% block content %}
-    <h3>Profile</h3>
+    <h3>{{ user.username }}'s Profile</h3>
+    {% for fable in fables %}
+      <a href="{% url 'publish' fable.id %}" style="font-size:20px">{{ fable.title }}</a>
+       Created : {{ fable.create_date.date }}
+     <br/>
+    {% endfor %}
 {% endblock %}
